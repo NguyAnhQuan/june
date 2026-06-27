@@ -21,6 +21,7 @@ from app.services.conversation_context import (
     updateContext,
 )
 from app.services.faq_handlers import handleShipping, handlePromotion
+from app.services import rag_pipeline
 from sqlalchemy import text
 
 
