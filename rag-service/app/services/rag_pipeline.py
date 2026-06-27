@@ -87,7 +87,7 @@ def score_and_pick(message: str, rows: List[Dict[str, Any]], top_k: int = 6) -> 
     if not rows:
         return []
 
-    q_vec = embed_texts([message.strip()])[0]
+    q_vec = embed_texts([message.strip()], mode="query")[0]
     scored: List[Tuple[float, Dict[str, Any]]] = []
 
     for row in rows:
@@ -117,7 +117,7 @@ def ingest_plain_text(
     if not parts:
         raise ValueError("Không đọc được nội dung văn bản từ file")
 
-    vectors = embed_texts(parts)
+    vectors = embed_texts(parts, mode="document")
     emb_jsons = [json.dumps(v.tolist()) for v in vectors]
 
     if session_id:

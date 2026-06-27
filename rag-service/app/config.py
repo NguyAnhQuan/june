@@ -21,8 +21,7 @@ OPENAI_CHAT_MODEL = os.getenv("OPENAI_CHAT_MODEL", "gpt-4o-mini")
 # Gemini (Google)
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
-
-# Model đa ngữ, embedding 384 chiều — lưu JSON trong MySQL
-EMBED_MODEL_NAME = os.getenv("RAG_EMBED_MODEL", "paraphrase-multilingual-MiniLM-L12-v2")
+GEMINI_EMBED_MODEL = os.getenv("GEMINI_EMBED_MODEL", "gemini-embedding-001")
+GEMINI_EMBED_DIMENSION = int(os.getenv("GEMINI_EMBED_DIMENSION", "768"))
 
 MAX_FILE_BYTES = 8 * 1024 * 1024

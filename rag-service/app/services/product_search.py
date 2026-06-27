@@ -113,8 +113,8 @@ def rankProducts(query: str, rows: List[Dict[str, Any]], plan: KeywordPlan, top_
             )
         )
 
-    q_vec = embed_texts([query.strip()])[0]
-    mat = embed_texts(texts)
+    q_vec = embed_texts([query.strip()], mode="query")[0]
+    mat = embed_texts(texts, mode="document")
     sims = cosine_sim_query_matrix(q_vec, mat)  # 0..1
 
     # Keyword score (strict): name/slug/category must match more
