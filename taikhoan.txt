@@ -1,0 +1,18 @@
+========================================
+  TÀI KHOẢN ĐĂNG NHẬP - JUNE FASHION
+========================================
+
+--- Admin ---
+Email:    admin@june.vn
+Mật khẩu: admin123
+
+--- Khách hàng ---
+Email:    user@june.vn
+Mật khẩu: user123
+
+========================================
+Trang admin:  http://localhost:3000/admin
+Trang chủ:    http://localhost:3000
+========================================
+cd server =>  npm run dev
+cd client => npm start
