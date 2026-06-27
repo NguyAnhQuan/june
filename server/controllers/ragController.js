@@ -1,7 +1,7 @@
 const axios = require('axios');
 const FormData = require('form-data');
 
-const RAG_BASE = (process.env.RAG_SERVICE_URL || 'http://127.0.0.1:8000').replace(/\/$/, '');
+const RAG_BASE = (process.env.RAG_SERVICE_URL || 'http://127.0.0.1:18765').replace(/\/$/, '');
 const RAG_SECRET = process.env.RAG_INTERNAL_SECRET || 'dev-rag-secret-doi-trong-production';
 
 function ragHeaders(extra = {}) {

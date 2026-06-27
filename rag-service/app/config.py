@@ -24,4 +24,7 @@ GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
 GEMINI_EMBED_MODEL = os.getenv("GEMINI_EMBED_MODEL", "gemini-embedding-001")
 GEMINI_EMBED_DIMENSION = int(os.getenv("GEMINI_EMBED_DIMENSION", "768"))
 
+RAG_HOST = os.getenv("RAG_HOST", "127.0.0.1")
+RAG_PORT = int(os.getenv("RAG_PORT", "18765"))
+
 MAX_FILE_BYTES = 8 * 1024 * 1024

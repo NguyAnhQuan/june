@@ -224,7 +224,7 @@ export default function AdminRagDocs() {
             <p className="font-semibold text-amber-900">Không kết nối được dịch vụ RAG (Python)</p>
             <p className="text-amber-800/90 mt-1.5 leading-relaxed">{loadError}</p>
             <ul className="mt-3 list-disc list-inside text-xs text-amber-900/80 space-y-1">
-              <li>Chạy: <code className="rounded bg-amber-100/80 px-1 py-0.5">uvicorn app.main:app --host 127.0.0.1 --port 8000</code> trong thư mục <code className="rounded bg-amber-100/80 px-1">rag-service</code></li>
+              <li>Chạy: <code className="rounded bg-amber-100/80 px-1 py-0.5">python run.py</code> trong thư mục <code className="rounded bg-amber-100/80 px-1">rag-service</code> (mặc định cổng <code className="rounded bg-amber-100/80 px-1">18765</code>)</li>
               <li>Kiểm tra <code className="rounded bg-amber-100/80 px-1">RAG_INTERNAL_SECRET</code> trùng trong <code className="rounded bg-amber-100/80 px-1">server/.env</code></li>
             </ul>
           </div>
