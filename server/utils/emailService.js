@@ -1,12 +1,19 @@
 const { Resend } = require('resend');
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const FROM_EMAIL = process.env.MAIL_FROM_ADDRESS || 'noreply@qlhtt.io.vn';
 const FROM_NAME = process.env.MAIL_FROM_NAME || 'Shop';
 
+let resend;
+function getResend() {
+  if (!process.env.RESEND_API_KEY) {
+    throw new Error('Thiếu RESEND_API_KEY trong .env');
+  }
+  if (!resend) resend = new Resend(process.env.RESEND_API_KEY);
+  return resend;
+}
+
 exports.sendForgotPassword = async (to, name, resetUrl) => {
-    await resend.emails.send({
+    await getResend().emails.send({
         from: `${FROM_NAME} <${FROM_EMAIL}>`,
         to,
         subject: 'Đặt lại mật khẩu',
@@ -35,7 +42,7 @@ exports.sendOrderConfirmation = async (to, name, order) => {
     </tr>`
     ).join('') || '';
 
-    await resend.emails.send({
+    await getResend().emails.send({
         from: `${FROM_NAME} <${FROM_EMAIL}>`,
         to,
         subject: `Xác nhận đơn hàng #${order.order_code}`,
@@ -80,7 +87,7 @@ exports.sendOrderStatusUpdate = async (to, name, orderCode, status) => {
     };
     const label = statusMap[status] || status;
 
-    await resend.emails.send({
+    await getResend().emails.send({
         from: `${FROM_NAME} <${FROM_EMAIL}>`,
         to,
         subject: `Cập nhật đơn hàng #${orderCode}`,
