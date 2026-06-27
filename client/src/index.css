@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  ::selection {
+    background-color: #fecdd3;
+    color: #881337;
+  }
+}
+
+@layer components {
+  input:focus, textarea:focus, select:focus {
+    border-color: #fb7185 !important;
+    box-shadow: 0 0 0 1px #fb718540;
+  }
+}
+
+/* Thanh tiến độ không xác định (chờ server/Python) — trang Admin RAG */
+@keyframes rag-upload-slide {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(320%);
+  }
+}
+.rag-progress-indeterminate {
+  width: 38%;
+  animation: rag-upload-slide 1.35s ease-in-out infinite;
+}
